@@ -37,7 +37,7 @@ class AuthenticatedSessionController extends Controller
         } else if ($usertype === 'user') {
             return redirect()->route('user.homepage');
         } else {
-            return redirect()->route('home');
+            return redirect()->route('user.homepage');
         }
     }
 

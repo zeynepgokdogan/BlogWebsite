@@ -39,7 +39,7 @@
             padding: 20px;
         }
     </style>
-    @include('admin.css')
+    @include('admin.homecss')
 </head>
 
 <body>
