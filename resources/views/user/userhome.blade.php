@@ -9,8 +9,7 @@
    <div class="header_section">
       @include('user.header')
       @include('user.banner')
-      @include('user.services')
-      @include('user.about')
+      @include('user.blogpost')
       @include('user.footer')
  
 </body>
