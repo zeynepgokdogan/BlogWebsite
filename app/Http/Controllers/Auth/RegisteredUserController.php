@@ -35,17 +35,20 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
-
+    
+        // Create a new user with default usertype
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'usertype' => 'user', // Set default usertype here
         ]);
-
+    
         event(new Registered($user));
-
+    
         Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+    
+        return redirect()->route('user.homepage'); // Redirect to user homepage
     }
+    
 }

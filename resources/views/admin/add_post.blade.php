@@ -71,7 +71,7 @@
             background-color: green;
         }
     </style>
-    @include('admin.css')
+    @include('admin.homecss')
 </head>
 
 <body>

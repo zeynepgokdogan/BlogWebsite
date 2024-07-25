@@ -15,7 +15,6 @@ class AdminController extends Controller
         return view('admin.adminhome');
     }
 
-
     public function post_page()
     {
         return view('admin.add_post');
