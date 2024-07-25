@@ -2,20 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use App\Models\Post;
 
 class UserController extends Controller
 {
-    /**
-     * Display the user dashboard.
-     *
-     * @return \Illuminate\View\View
-     */
+
     public function homepage()
     {
-        // Kullanıcı kontrol panelini göster
-        return view('user.userhome');
+        $post = Post::all();
+        return view('user.userhome', compact('post'));
     }
 
-    // Diğer kullanıcı sayfaları ve işlemleri burada olacak
+
+    public function blogpost()
+    {
+        $post = Post::all();
+        return view('user.blogpost', compact('post'));
+    }
+    public function post_details($id)
+    {
+        $post = Post::find($id);
+        return view('user.post_details', compact('post'));
+    }
 }
