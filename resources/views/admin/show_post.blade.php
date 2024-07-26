@@ -18,20 +18,25 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            overflow-x: auto; /* Mobil uyumluluk için yatay kaydırma */
+            overflow-x: auto;
+            /* Mobil uyumluluk için yatay kaydırma */
         }
 
         .table-deg {
-            border: 1px solid #864dd9; /* Tablo çerçevesi rengi */
+            border: 1px solid #864dd9;
+            /* Tablo çerçevesi rengi */
             width: 80%;
             text-align: center;
             border-collapse: separate;
             border-spacing: 0 10px;
-            margin: 0 auto; /* Tabloyu ortalamak için */
+            margin: 0 auto;
+            /* Tabloyu ortalamak için */
         }
 
-        .th-deg, .td-deg {
-            border-bottom: 2px solid #864dd9; /* Th ve td alt çizgisi rengi */
+        .th-deg,
+        .td-deg {
+            border-bottom: 2px solid #864dd9;
+            /* Th ve td alt çizgisi rengi */
             padding: 10px 20px;
         }
 
@@ -69,8 +74,30 @@
             color: white !important;
         }
 
+        .alert-custom {
+            background-color: #937CCB;
+            /* Buton rengi */
+            color: black;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .alert-custom .close {
+            color: white;
+            opacity: 0.7;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .alert-custom .close:hover {
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
-            .th-deg, .td-deg {
+
+            .th-deg,
+            .td-deg {
                 font-size: 18px;
                 padding: 5px 10px;
             }
@@ -81,7 +108,9 @@
         }
 
         @media (max-width: 480px) {
-            .th-deg, .td-deg {
+
+            .th-deg,
+            .td-deg {
                 font-size: 14px;
                 padding: 5px;
             }
@@ -97,7 +126,9 @@
                 padding: 20px;
             }
 
-            .table-deg, .th-deg, .td-deg {
+            .table-deg,
+            .th-deg,
+            .td-deg {
                 display: block;
                 width: 100%;
             }
@@ -131,7 +162,7 @@
 
         <div class="page-content">
             @if(session()->has('message'))
-            <div class="alert alert-success">
+            <div class="alert alert-custom">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                 {{ session()->get('message') }}
             </div>
@@ -153,7 +184,9 @@
                     @foreach ($post as $post)
                     <tr>
                         <td class="td-deg" data-label="Post Title">{{ $post->title }}</td>
-                        <td class="td-deg" data-label="Description">{{ \Illuminate\Support\Str::limit($post->description, 50, $end='...') }}</td> <!-- Description kısaltması -->
+                        <td class="td-deg" data-label="Description">{{
+                            \Illuminate\Support\Str::limit($post->description, 50, $end='...') }}</td>
+                        <!-- Description kısaltması -->
                         <td class="td-deg" data-label="Post By">{{ $post->name }}</td>
                         <td class="td-deg" data-label="Post Status">{{ $post->post_status }}</td>
                         <td class="td-deg" data-label="User Type">{{ $post->usertype }}</td>
@@ -163,7 +196,8 @@
                             </div>
                         </td>
                         <td class="td-deg" data-label="Delete">
-                            <a href="{{ url('delete_post', $post->id) }}" class="btn btn-danger" onclick="return confirmation(event)">Delete</a>
+                            <a href="{{ url('delete_post', $post->id) }}" class="btn btn-danger"
+                                onclick="return confirmation(event)">Delete</a>
                         </td>
                         <td class="td-deg" data-label="Edit">
                             <a href="{{ url('edit_post', $post->id) }}" class="btn-custom">Edit</a>
@@ -186,9 +220,10 @@
                 text: "You won't be able to revert this delete",
                 icon: "warning",
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Delete'
+                confirmButtonColor: '#dc3545', // Match the main screen "Delete" button color
+                cancelButtonColor: '#864dd9', // Match the main screen "Edit" button color
+                confirmButtonText: 'Delete',
+                cancelButtonText: 'Cancel'
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.href = urlToRedirect;

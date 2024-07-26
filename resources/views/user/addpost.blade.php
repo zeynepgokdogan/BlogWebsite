@@ -100,7 +100,7 @@
         .alert {
             background-color: #937CCB;
             /* Buton rengi */
-            color: white;
+            color: black;
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 20px;

@@ -38,5 +38,8 @@ Route::prefix('user')->group(function () {
     Route::get('/addpost', [UserController::class, 'addpost'])->name('user.addpost');
     Route::post('/addpost', [UserController::class, 'user_post'])->name('user_post');
     Route::get('/mypost', [UserController::class, 'my_post'])->name('my_post');
+    Route::get('/delete/{id}', [UserController::class, 'mypost_delete'])->name('mypost_delete');
+    Route::get('/edit/{id}', [UserController::class, 'mypost_edit'])->name('mypost_edit');
+    Route::post('/update/{id}', [UserController::class, 'mypost_update'])->name('mypost_update');
     Route::get('/post_details/{id}', [UserController::class, 'post_details'])->name('post_details');
 });

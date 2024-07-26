@@ -62,11 +62,37 @@ class UserController extends Controller
 
     public function my_post()
     {
-        $user=Auth::user();
-        $userid=$user->id;
+        $user = Auth::user();
+        $userid = $user->id;
 
         $data = Post::where('user_id', '=', $userid)->get();
         return view('user.mypost', compact('data'));
     }
+    public function mypost_delete($id)
+    {
+        $data = Post::find($id);
+        $data->delete();
+        return redirect()->back()->with('message', 'Post deleted Succesfully.');
+    }
 
+    public function mypost_edit($id)
+    {
+        $post = Post::find($id);
+        return view('user.editpost', compact('post'));
+    }
+
+    public function mypost_update(Request $request, $id)
+    {
+        $data = Post::find($id);
+        $data->title = $request->title;
+        $data->description = $request->description;
+        $image = $request->image;
+        if ($image) {
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->image->move('postimage', $imagename);
+            $data->image = $imagename;
+        }
+        $data->save();
+        return redirect()->route('my_post')->with('message', 'Post update succesfully.');
+    }
 }

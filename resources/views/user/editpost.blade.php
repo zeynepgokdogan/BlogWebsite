@@ -1,8 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    @include('user.homecss')
+
     <style>
+        p {
+            color: #937CCB;
+            text-align: center;
+            font-family: 'Righteous', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: normal;
+            margin-top: 70px !important;
+        }
+
         body {
             background-color: #111;
             color: white;
@@ -13,33 +26,33 @@
         .post_title {
             font-size: 30px;
             font-weight: bold;
-            color: #864dd9;
-            padding: 30px;
             text-align: center;
+            padding: 30px;
         }
 
         .form-container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 50px auto;
             padding: 20px;
-            border: 2px solid #864dd9;
+            border: 2px solid #ccc;
             border-radius: 10px;
-            background-color: #333;
+            background-color: rgba(255, 255, 255, 0.9);
         }
 
         .div_center {
             display: flex;
-            align-items: center;
             justify-content: center;
+            /* Center horizontally */
             padding: 15px;
         }
 
         label {
+            font-weight: bold;
             display: inline-block;
             width: 200px;
             text-align: right;
             margin-right: 10px;
-            color: white;
+            color: black;
         }
 
         input[type="text"],
@@ -47,56 +60,70 @@
         input[type="file"] {
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid #864dd9;
+            border: 1px solid #ccc;
+            /* Ensure border is light grey */
             width: 300px;
-            background-color: #666;
-            color: white;
+            background-color: #c6c2ff;
+            color: black;
             margin-left: 10px;
         }
 
         textarea {
             height: 100px;
             resize: vertical;
-            background-color: #666 !important;
-            color: white !important;
-            border: 1px solid #864dd9 !important;
+            background-color: #c6c2ff !important;
+            color: black !important;
+            border-radius: 10px !important;
+            border: 1px solid #ccc !important;
+            /* Ensure the border is light grey */
         }
 
         .btn {
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            background-color: #864dd9;
-            text-align: center;
+            background-color: #937CCB;
             color: white;
             cursor: pointer;
             font-size: 16px;
-            display: block;
-            margin: 0 auto;
+            text-transform: uppercase;
+            text-align: center;
+            display: inline-block;
+            /* Ensure the button takes only the necessary width */
         }
 
         .btn:hover {
-            background-color: #6825ce;
+            background-color: #2b2278;
         }
 
-        .image-container {
-            display: flex;
+
+        .alert {
+            background-color: #937CCB;
+            /* Buton rengi */
+            color: black;
+            text-align: center !important;
             align-items: center;
-            justify-content: center;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
 
-        .image-container img {
-            margin-left: 10px;
+        .alert .close {
+            color: white;
+            opacity: 0.7;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .alert .close:hover {
+            opacity: 1;
         }
     </style>
-    <base href="/public">
-    @include('admin.homecss')
 </head>
 
 <body>
-    @include('admin.header')
-    <div class="d-flex align-items-stretch">
-        @include('admin.sidebar')
+    <div class="header_section">
+        @include('user.header')
 
         <div class="page-content">
 
@@ -107,9 +134,9 @@
             </div>
             @endif
 
-            <h1 class="post_title">EDIT POST</h1>
+            <p>EDIT BLOG</p>
             <div class="form-container">
-                <form action="{{ route('update_post',$post->id)}}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('mypost_update', $post->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="div_center">
                         <label>Post Title</label>
@@ -117,7 +144,7 @@
                     </div>
                     <div class="div_center">
                         <label>Post Description</label>
-                        <textarea name="description">{{$post->description}}</textarea>
+                        <textarea name="description"> {{$post->description}}</textarea>
                     </div>
                     <div class="div_center image-container">
                         <label>Old Image</label>
@@ -133,8 +160,7 @@
                 </form>
             </div>
         </div>
-
-        @include('admin.footer')
+        @include('user.footer')
     </div>
 </body>
 

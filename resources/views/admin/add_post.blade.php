@@ -4,10 +4,10 @@
 <head>
     <style>
         body {
-            background-color: #111; 
-            color: white; 
-            margin: 0; 
-            font-family: Arial, sans-serif; 
+            background-color: #111;
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
 
         .post_title {
@@ -22,9 +22,9 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            border: 2px solid #ccc;
+            border: 2px solid #864dd9;
             border-radius: 10px;
-            background-color: #333; 
+            background-color: #333;
         }
 
         .div_center {
@@ -37,7 +37,7 @@
             width: 200px;
             text-align: right;
             margin-right: 10px;
-            color: white; 
+            color: white;
         }
 
         input[type="text"],
@@ -45,18 +45,19 @@
         input[type="file"] {
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #864dd9;
             width: 300px;
-            background-color: #666; 
-            color: white; 
+            background-color: #666;
+            color: white;
             margin-left: 10px;
         }
 
         textarea {
             height: 100px;
             resize: vertical;
-            background-color: #666 !important; 
-            color: white !important; 
+            background-color: #666 !important;
+            color: white !important;
+            border: 1px solid #864dd9 !important;
         }
 
         .btn {
@@ -70,6 +71,26 @@
 
         .btn:hover {
             background-color: #6825ce;
+        }
+
+        /* Alert CSS */
+        .alert {
+            background-color: #937CCB !important;
+            color: black !important;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .alert .close {
+            color: white;
+            opacity: 0.7;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .alert .close:hover {
+            opacity: 1;
         }
     </style>
     @include('admin.homecss')
