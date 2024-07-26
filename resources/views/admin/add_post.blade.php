@@ -15,6 +15,7 @@
             font-weight: bold;
             text-align: center;
             padding: 30px;
+            color: #864dd9;
         }
 
         .form-container {
@@ -62,13 +63,13 @@
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            background-color: red;
+            background-color: #864dd9;
             color: white;
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: green;
+            background-color: #6825ce;
         }
     </style>
     @include('admin.homecss')
@@ -88,7 +89,7 @@
             </div>
             @endif
 
-            <h1 class="post_title">Add Post</h1>
+            <h1 class="post_title">ADD POST</h1>
             <div class="form-container">
                 <form action="{{ route('add_post') }}" method="POST" enctype="multipart/form-data">
                     @csrf
