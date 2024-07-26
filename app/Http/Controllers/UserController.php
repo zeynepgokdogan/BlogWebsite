@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -59,4 +59,14 @@ class UserController extends Controller
         $post->save();
         return redirect()->back()->with('message', 'Post added succesfully');
     }
+
+    public function my_post()
+    {
+        $user=Auth::user();
+        $userid=$user->id;
+
+        $data = Post::where('user_id', '=', $userid)->get();
+        return view('user.mypost', compact('data'));
+    }
+
 }

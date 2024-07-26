@@ -13,10 +13,13 @@
                         <a class="nav-link" href="{{ url('/user/homepage') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/user/blogpost') }}">Blog post</a>
+                        <a class="nav-link" href="{{ url('/user/blogpost') }}">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/user/addpost') }}">Add post</a>
+                        <a class="nav-link" href="{{ url('/user/addpost') }}">Add Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/user/mypost') }}">My post</a>
                     </li>
                 </ul>
             </div>
@@ -29,9 +32,11 @@
                 <li class="{{ Request::is('user/homepage') ? 'active' : '' }}"><a
                         href="{{ url('/user/homepage') }}">Home</a></li>
                 <li class="{{ Request::is('user/blogpost') ? 'active' : '' }}"><a
-                        href="{{ url('/user/blogpost') }}">Blog post</a></li>
+                        href="{{ url('/user/blogpost') }}">Blogs</a></li>
                 <li class="{{ Request::is('user/blogpost') ? 'active' : '' }}"><a href="{{ url('/user/addpost') }}">Add
-                        post</a></li>
+                     Blog</a></li>
+                <li class="{{ Request::is('user/mypost') ? 'active' : '' }}"><a href="{{ url('/user/mypost') }}">My
+                        posts</a></li>
 
                 @guest
                 <li><a href="{{ route('login') }}">Login</a></li>

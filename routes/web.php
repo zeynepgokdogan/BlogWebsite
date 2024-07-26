@@ -37,5 +37,6 @@ Route::prefix('user')->group(function () {
     Route::get('/blogpost', [UserController::class, 'blogpost'])->name('user.blogpost');
     Route::get('/addpost', [UserController::class, 'addpost'])->name('user.addpost');
     Route::post('/addpost', [UserController::class, 'user_post'])->name('user_post');
+    Route::get('/mypost', [UserController::class, 'my_post'])->name('my_post');
     Route::get('/post_details/{id}', [UserController::class, 'post_details'])->name('post_details');
 });
