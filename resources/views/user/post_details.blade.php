@@ -23,12 +23,15 @@
             margin-bottom: 20px;
         }
 
-        h1 {
-            color: purple;
-            font-size: 30px !important;
-            font-weight: bold !important;
+        p {
+            color: #937CCB;
             text-align: center;
-            margin: 0 0 20px 0;
+            font-family: 'Righteous', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: normal;
+
         }
 
         h2 {

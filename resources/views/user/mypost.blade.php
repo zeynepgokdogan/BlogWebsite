@@ -5,12 +5,17 @@
     @include('user.homecss')
     <!-- Include your custom CSS -->
     <style>
-        h1{
+        p {
             color: #937CCB;
-            font-size: 30px !important;
-            font-weight: bold !important;
             text-align: center;
+            font-family: 'Righteous', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: normal;
+
         }
+
         h4 {
             color: black;
             text-align: center;
@@ -22,8 +27,9 @@
             border-radius: 10px;
         }
 
-        p {
+        h5 {
             text-align: center;
+            font-size: 15px !important;
         }
 
         .col-md-4 {
@@ -34,12 +40,12 @@
             flex-direction: column;
             justify-content: space-between;
             padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
-            transition: box-shadow 0.3s ease-in-out; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: box-shadow 0.3s ease-in-out;
         }
 
         .col-md-4:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -51,7 +57,7 @@
 
         <div class="services_section layout_padding">
             <div class="container">
-                <h1> MY BLOGS</h1>
+                <p> MY BLOGS</p>
                 <div class="services_section_2">
                     <div class="row justify-content-center">
                         <!-- Center align columns -->
@@ -59,7 +65,7 @@
                         <div class="col-md-4">
                             <div class="img-div"><img src="/postimage/{{$mydata->image}}" class="post_image"></div>
                             <h4>{{$mydata->title}}</h4>
-                            <p>{{$mydata->name}}</p>
+                            <h5>{{$mydata->name}}</h5>
                             <div class="btn_main"><a href="{{ route('post_details', $mydata->id) }}">Read More</a>
                             </div>
                         </div>

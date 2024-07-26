@@ -5,11 +5,15 @@
     @include('user.homecss')
 
     <style>
-        h1 {
+        p {
             color: #937CCB;
-            font-size: 30px !important;
             text-align: center;
-            margin-top: 40px !important;
+            font-family: 'Righteous', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: normal;
+            margin-top: 70px !important;
         }
 
         body {
@@ -89,7 +93,7 @@
         }
 
         .btn:hover {
-            background-color: darkviolet;
+            background-color: #2b2278;
         }
 
 
@@ -128,7 +132,7 @@
             </div>
             @endif
 
-            <h1 class="post_title">ADD YOUR BLOG</h1>
+            <p>ADD YOUR BLOG</p>
             <div class="form-container">
                 <form action="{{ route('user_post') }}" method="POST" enctype="multipart/form-data">
                     @csrf

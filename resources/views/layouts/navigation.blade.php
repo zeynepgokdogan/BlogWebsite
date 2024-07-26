@@ -7,17 +7,13 @@
     <style>
         .dropdown-link {
             background-color: white;
-            color: black !important; /* Force text color to black */
-            font-size: 16px; /* Increase font size */
-            font-weight: 600; /* Increase font weight */
-            padding: 10px 15px; /* Add padding */
-            text-decoration: none; /* Remove underline */
-            display: block; /* Ensure the links are block elements */
+            color: black !important; 
+            font-size: 15px !important;       
         }
 
         .dropdown-link:hover {
-            color: white !important; 
-            background-color: white; /* Keep background color white on hover */
+            color: white !important; /* Force hover text color to red */
+            background-color: #2b2278 !important; /* Keep background color white on hover */
         }
     </style>
 </head>

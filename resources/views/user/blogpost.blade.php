@@ -5,12 +5,17 @@
     @include('user.homecss')
     <!-- Include your custom CSS -->
     <style>
-        h1{
+          p {
             color: #937CCB;
-            font-size: 30px !important;
-            font-weight: bold !important;
             text-align: center;
+            font-family: 'Righteous', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: normal;
+
         }
+
         h4 {
             color: black;
             text-align: center;
@@ -22,9 +27,11 @@
             border-radius: 10px;
         }
 
-        p {
+        h5 {
             text-align: center;
+            font-size: 15px !important;
         }
+
 
         .col-md-4 {
             background-color: white;
@@ -51,15 +58,15 @@
 
         <div class="services_section layout_padding">
             <div class="container">
-                <h1> BLOG FROM EVERYDAY LIFE</h1>
+                <p> BLOG FROM EVERYDAY LIFE</p>
                 <div class="services_section_2">
                     <div class="row justify-content-center">
                         <!-- Center align columns -->
                         @foreach ($post as $singlePost)
                         <div class="col-md-4">
                             <div class="img-div"><img src="/postimage/{{$singlePost->image}}" class="post_image"></div>
-                            <h4>{{$singlePost->title}}</h4>
-                            <p>{{$singlePost->name}}</p>
+                            <h4>{{$singlePost->title}}</h5>
+                            <h5>{{$singlePost->name}}</p>
                             <div class="btn_main"><a href="{{ route('post_details', $singlePost->id) }}">Read More</a>
                             </div>
                         </div>
