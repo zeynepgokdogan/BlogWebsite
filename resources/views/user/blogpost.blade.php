@@ -5,6 +5,12 @@
     @include('user.homecss')
     <!-- Include your custom CSS -->
     <style>
+        h1{
+            color: #937CCB;
+            font-size: 30px !important;
+            font-weight: bold !important;
+            text-align: center;
+        }
         h4 {
             color: black;
             text-align: center;
@@ -28,6 +34,12 @@
             flex-direction: column;
             justify-content: space-between;
             padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+            transition: box-shadow 0.3s ease-in-out; 
+        }
+
+        .col-md-4:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
         }
     </style>
 </head>
@@ -39,9 +51,7 @@
 
         <div class="services_section layout_padding">
             <div class="container">
-                <h1 class="services_taital">Blog Post</h1>
-                <p class="services_text">There are many variations of passages of Lorem Ipsum available, but the
-                    majority have suffered alteration</p>
+                <h1> BLOG FROM EVERYDAY LIFE</h1>
                 <div class="services_section_2">
                     <div class="row justify-content-center">
                         <!-- Center align columns -->

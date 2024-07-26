@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Post;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -20,9 +22,41 @@ class UserController extends Controller
         $post = Post::all();
         return view('user.blogpost', compact('post'));
     }
+
     public function post_details($id)
     {
         $post = Post::find($id);
         return view('user.post_details', compact('post'));
+    }
+
+    public function addpost()
+    {
+        return view('user.addpost');
+    }
+
+    public function user_post(Request $request)
+    {
+        $user = Auth()->user();
+        $userid = $user->id;
+        $name = $user->name;
+        $usertype = $user->usertype;
+
+        $post = new Post;
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->post_status = 'active';
+        $post->name = $name;
+        $post->user_id = $userid;
+        $post->usertype = $usertype;
+
+        $image = $request->image;
+        if ($image) {
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->image->move('postimage', $imagename);
+            $post->image = $imagename;
+        }
+
+        $post->save();
+        return redirect()->back()->with('message', 'Post added succesfully');
     }
 }

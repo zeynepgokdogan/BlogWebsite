@@ -20,23 +20,30 @@
             text-align: center;
             margin-left: 100px;
             border-collapse: separate;
-            border-spacing: 0 10px; /* Satırlar arasındaki boşluğu ayarlayın */
+            border-spacing: 0 10px;
         }
 
         .th-deg {
             background-color: skyblue;
             color: black;
-            padding: 10px 20px; /* Başlık hücrelerine padding */
+            padding: 10px 20px;
         }
 
         .td-deg {
-            padding: 10px 20px; /* Veri hücrelerine padding */
+            padding: 10px 20px;
         }
 
-        .img-deg {
+        .img-container {
             height: 150px;
             width: 350px;
             padding: 20px;
+            overflow: hidden;
+        }
+
+        .img-deg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
     @include('admin.homecss')
@@ -74,7 +81,11 @@
                     <td class="td-deg">{{ $post->name }}</td>
                     <td class="td-deg">{{ $post->post_status }}</td>
                     <td class="td-deg">{{ $post->usertype }}</td>
-                    <td class="td-deg"><img class="img-deg" src="{{ asset('postimage/'.$post->image) }}" alt="Post Image"></td>
+                    <td class="td-deg">
+                        <div class="img-container">
+                            <img class="img-deg" src="{{ asset('postimage/'.$post->image) }}" alt="Post Image">
+                        </div>
+                    </td>
                     <td class="td-deg">
                         <a href="{{ url('delete_post', $post->id) }}" class="btn btn-danger" onclick="return confirmation(event)">Delete</a>
                     </td>

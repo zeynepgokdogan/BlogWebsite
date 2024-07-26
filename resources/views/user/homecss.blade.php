@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
 <!-- fevicon -->
-<link rel="icon" href="{{ asset('images/fevicon.png') }}" type="image/gif" />
+<link rel="icon" href="{{ asset('/images/fevicon.png') }}" type="image/gif" />
 
 <!-- Scrollbar Custom CSS -->
 <link rel="stylesheet" href="{{ asset('admincss/css/jquery.mCustomScrollbar.min.css') }}">

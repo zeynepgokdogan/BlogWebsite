@@ -35,5 +35,7 @@ Route::post('/update_post/{id}', [AdminController::class, 'update_post'])->name(
 Route::prefix('user')->group(function () {
     Route::get('/homepage', [UserController::class, 'homepage'])->name('user.homepage');
     Route::get('/blogpost', [UserController::class, 'blogpost'])->name('user.blogpost');
+    Route::get('/addpost', [UserController::class, 'addpost'])->name('user.addpost');
+    Route::post('/addpost', [UserController::class, 'user_post'])->name('user_post');
     Route::get('/post_details/{id}', [UserController::class, 'post_details'])->name('post_details');
 });
