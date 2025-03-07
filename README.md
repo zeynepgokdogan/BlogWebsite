@@ -1,4 +1,4 @@
-# Blog Yönetim Uygulaması (Laravel)
+# Blog Yönetim Uygulaması (Laravel & PHP)
 
 Bu proje, Laravel kullanılarak geliştirilmiş bir blog yönetim sistemidir. Hem kullanıcılar hem de adminler için web sayfaları içermektedir. Kullanıcılar blog yazılarını okuyabilir, paylaşabilir ve yorum yapabilirken, adminler içerik yönetimini gerçekleştirebilir.
 
